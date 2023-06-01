@@ -175,20 +175,6 @@ function OnPlayerSpawned(a_Player)
 		-- OnPlayerSpawned is also called when the player respawned, so we can't blindly teleport the player
 		return false
 	end
-	
-	-- Teleport the player to the spawn of the world
-	local World = a_Player:GetWorld()
-	local UUID = a_Player:GetUUID()
-	World:QueueTask(
-		function()
-			cRoot:Get():DoWithPlayerByUUID(UUID,
-				function(a_Player)
-					-- print(World:GetSpawnX(), World:GetSpawnY(), World:GetSpawnZ())
-					a_Player:TeleportToCoords(World:GetSpawnX(), World:GetSpawnY(), World:GetSpawnZ())
-				end
-			)
-		end
-	)
 end
 
 
