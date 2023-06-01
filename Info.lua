@@ -7,8 +7,8 @@ g_PluginInfo =
 {
 	Name = "Login",
 	Version = "3",
-	Date = "2015-12-29", -- yyyy-mm-dd
-	SourceLocation = "https://github.com/NiLSPACE/Login",
+	Date = "2023-06-01", -- yyyy-mm-dd
+	SourceLocation = "https://github.com/bariscodefxy/Login",
 	Description = [[
 Login is a security plugin for MCServer. 
 It requires a player to log in before they can do any action on the server. 
