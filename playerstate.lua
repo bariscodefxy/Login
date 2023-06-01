@@ -117,8 +117,7 @@ function cPlayerState:TryLogin(a_Password)
 	if (g_PassStorage:GetPasswordFromUUID(self.m_UUID) ~= cCryptoHash.md5HexString(a_Password)) then
 		return false, "The password is incorrect"
 	end
-	
-	self:TeleportBack()
+
 	self.m_IsLoggedIn = true
 	return true
 end
@@ -165,26 +164,6 @@ end
 
 
 
-function cPlayerState:TeleportBack()
-	if (self.m_IsLoggedIn) then
-		-- Don't teleport a player when he's already logged in
-		return false
-	end
-	
-	-- Mark the player as teleporting. Otherwise the OnPlayerMoving hook might filter the teleport out.
-	self.m_Teleporting = true
-	
-	self:DoWithPlayer(
-		function(a_Player)
-			a_Player:TeleportToCoords(
-				self.m_StartPos.x,
-				self.m_StartPos.y,
-				self.m_StartPos.z
-			)
-		end
-	)
-	return true
-end
 
 
 
